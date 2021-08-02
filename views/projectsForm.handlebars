@@ -1,0 +1,34 @@
+<h1>Create a new project</h1>
+
+<div class='formDiv'>
+    <form id="newProjectForm">
+        <div class="mb-3">
+            <label for="projectName" class="form-label">Project Name</label>
+            <input type="text" class="form-control" id="projectName" required>
+        </div>
+        <div class="mb-3">
+            <label for="budget" class="form-label">Project Budget</label>
+            <input type="number" step="any" class="form-control" id="budget" required>
+        </div>
+        <div class="mb-3">
+            <label for="startDate" class="form-label">Project Start Date</label>
+            <input type="date" id="startDate" required>
+        </div>
+        <div class="mb-3">
+            <label for="endDate" class="form-label">Project End Date</label>
+            <input type="date" id="endDate" required>
+        </div>
+        <button type="submit" class="btn btn-primary" id="newProjectBtn">Submit</button>
+    </form>
+</div>
+
+<div id="updateDiv"></div>
+
+
+<div class="container" id="btnDiv">
+    <div class="center">
+        <a class="btn btn-primary" href="/projects" role="button">Go back to Projects</a>
+    </div>
+</div>
+
+<script src="/newProject.js"></script>

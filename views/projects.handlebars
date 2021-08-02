@@ -1,0 +1,28 @@
+<h1>Index</h1>
+
+<div class="row row-cols-1 row-cols-md-4 g-4">
+    {{#each results}}
+    <div class="col">
+        <div class="container">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{this.projectName}}</h5>
+                    <p class="card-text">Budget: {{this.budget}}</p>
+                    <p class="card-text">Start Date: {{this.startDate}}</p>
+                    <p class="card-text">End Date: {{this.endDate}}</p>
+                    <a href="/projects/edit/{{this.projectID}}" class="card-link">Edit</a>
+                    <div>
+                        <a href="/dashboard/{{this.projectName}}" class="btn btn-primary">Go to project dashboard</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
+
+<div class="container" id="btnDiv">
+    <div class="center">
+        <a class="btn btn-primary" href="/projects/new" role="button" id="newProjectBtn">Add new project</a>
+    </div>
+</div>

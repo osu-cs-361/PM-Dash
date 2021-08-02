@@ -1,0 +1,50 @@
+<h1>Editing {{results.projectName}}</h1>
+
+<div class='formDiv'>
+    <form id="editProjectForm">
+        <div class="mb-3">
+            <label for="projectID" class="form-label">Project ID</label>
+            <input class="form-control" type="text" id="projectID" value="{{results.projectID}}"
+                aria-label="Disabled input example" disabled readonly>
+        </div>
+        <div class="mb-3">
+            <label for="projectName" class="form-label">Project Name</label>
+            <input type="text" class="form-control" id="projectName" value="{{results.projectName}}" required>
+        </div>
+        <div class="mb-3">
+            <label for="budget" class="form-label">Project Budget</label>
+            <input type="number" step="any" class="form-control" id="budget" value="{{results.budget}}" required>
+        </div>
+        <div class="mb-3">
+            <label for="startDate" class="form-label">Project Start Date</label>
+            <input type="date" id="startDate" value="{{results.startDate}}" required>
+        </div>
+        <div class="mb-3">
+            <label for="endDate" class="form-label">Project End Date</label>
+            <input type="date" id="endDate" value="{{results.endDate}}" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<div id="updateDiv"></div>
+
+
+<form method='POST' action="/projects/delete/{{results.projectName}}" id="delProjectForm">
+    <input type="hidden" id="hiddenID" value="{{results.projectID}}">
+    <div class="container" id="btnDiv">
+        <div class="center">
+            <button class="btn btn-danger">Delete project</button>
+        </div>
+    </div>
+
+</form>
+
+<div class="container" id="btnDiv">
+    <div class="center">
+        <a class="btn btn-primary" href="/projects" role="button">Go back to Projects</a>
+    </div>
+</div>
+
+
+<script src="/editProject.js"></script>
