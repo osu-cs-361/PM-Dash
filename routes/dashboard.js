@@ -13,7 +13,6 @@ router.get('/:projectName', (req, res, next) => {
             return;
         }
         context.results = results;
-        console.log(context.results)
         res.render('dashboard', context);
     })
 
