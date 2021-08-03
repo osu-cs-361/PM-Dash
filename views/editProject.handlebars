@@ -30,7 +30,7 @@
 <div id="updateDiv"></div>
 
 
-<form method='POST' action="/projects/delete/{{results.projectName}}" id="delProjectForm">
+<form method='POST' action="/projects/delete/{{results.projectName}}&{{results.projectID}}" id="delProjectForm">
     <input type="hidden" id="hiddenID" value="{{results.projectID}}">
     <div class="container" id="btnDiv">
         <div class="center">

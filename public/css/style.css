@@ -1,31 +1,47 @@
-div {
-  text-align: center;
-  margin: 5px;
-}
-
 h1 {
   text-align: center;
 }
 
-table {
-  border: 1px solid black;
-  width: 100%;
+.cardDiv {
+  margin:10px;
 }
 
-td, th {
-  border: 1px solid black;
-  padding: 5px;
+.card {
+  margin: 5px;
 }
 
-.insertForm {
-  text-align: left;
-  border: 1px solid black;
+#btnDiv {
+  margin-top: 50px;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.insertForm form div{
-  text-align: left;
+.formDiv {
+  margin: 5px;
+  padding: 10px;
+  border: 1px solid gray;
 }
 
-div ul li {
+#updateDiv {
   text-align: center;
+}
+
+.progress {
+  margin-top: 2px;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.title {
+  margin-top: 50px;
+  text-align: center;
+}
+
+#reportDiv {
+  margin: 10px;
 }

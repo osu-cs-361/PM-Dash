@@ -1,17 +1,29 @@
 //-----------------------------------------------------------------------------
-const express = require('express');     // using express for server-side
-const mysql = require('./dbcon.js');    // dbcon.js hold credientials for mySQL
-
+// Set up Express for server-side
+const express = require('express');
 const app = express();
-const handlebars = require('express-handlebars').create({ defaultLayout: 'main' });
-const bodyParser = require('body-parser');
+app.set('port', 14956);
 
+const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+// Set up for handlebars
+const handlebars = require('express-handlebars').create({ defaultLayout: 'main' });
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
-app.set('port', 14956);
+
+// Set up routing
+app.use(express.static('public'));
+
+const projectRoutes = require('./routes/projects');
+app.use('/projects', projectRoutes);
+
+const dashboardRoutes = require('./routes/dashboard');
+app.use('/dashboard', dashboardRoutes);
+
+const helpRoutes = require('./routes/help');
+app.use('/help', helpRoutes);
 
 
 //-----------------------------------------------------------------------------

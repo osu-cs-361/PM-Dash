@@ -67,10 +67,18 @@ router.post('/edit', (req, res, next) => {
 })
 
 // DELETE /edit
-router.post('/delete/:name', (req, res) => {
+router.post('/delete/:name&:id', (req, res) => {
     context = {}
-    context.result = "You deleted the project: " + req.params.name;
-    res.render('delete', context)
+    let sql = 'DELETE FROM Projects WHERE projectID = ?;'
+    mysql.pool.query(sql, [req.params.id], function (err, results, fields) {
+        if (err) {
+            next(err);
+            return;
+        }
+        // Prepare response message
+        context.result = "You deleted the project: " + req.params.name;
+        res.render('delete', context)
+    })
 })
 
 module.exports = router;
