@@ -39,7 +39,8 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">Date [YYYY-MM-DD]</th>
+                        <th scope="col">logID</th>
+                        <th scope="col">Date</th>
                         <th scope="col">Scope</th>
                         <th scope="col">Production</th>
                         <th scope="col">Units</th>
@@ -47,27 +48,16 @@
                     </tr>
                 </thead>
                 <tbody>
+                    {{#each results}}
                     <tr>
-                        <th scope="row">2021-07-01</th>
-                        <td>Route A</td>
-                        <td>100</td>
-                        <td>Line km</td>
-                        <td>55000.00</td>
+                        <th scope="row">{{this.logID}}</th>
+                        <td>{{this.date}}</td>
+                        <td>{{this.scope}}</td>
+                        <td>{{this.production}}</td>
+                        <td>{{this.units}}</td>
+                        <td>{{this.spend}}</td>
                     </tr>
-                    <tr>
-                        <th scope="row">2021-07-02</th>
-                        <td>Route A</td>
-                        <td>50</td>
-                        <td>Line km</td>
-                        <td>27500.00</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2021-07-03</th>
-                        <td>Route A</td>
-                        <td>200</td>
-                        <td>Line km</td>
-                        <td>110000.00</td>
-                    </tr>
+                    {{/each}}
                 </tbody>
             </table>
         </div>

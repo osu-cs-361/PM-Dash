@@ -9,3 +9,6 @@ INSERT INTO Projects (projectName, budget, startDate, endDate) VALUES (?,?,?,?);
 
 -- Query to delete a commodity
 DELETE FROM Projects WHERE projectID = ?;
+
+-- Query to get all columns from DailyLog
+SELECT logID, date, scope, production, units, spend FROM DailyLog;
