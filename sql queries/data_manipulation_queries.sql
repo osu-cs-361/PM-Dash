@@ -7,8 +7,15 @@ SELECT projectID, projectName, budget, startDate, endDate FROM Projects WHERE pr
 -- denote the variables 
 INSERT INTO Projects (projectName, budget, startDate, endDate) VALUES (?,?,?,?);
 
--- Query to delete a commodity
+-- Query to edit a project based on user input with colon : character being used to 
+-- denote the variables 
+UPDATE Projects SET projectName = ?, budget = ?, startDate = ?, endDate = ? WHERE projectID = ?; 
+
+-- Query to delete a project
 DELETE FROM Projects WHERE projectID = ?;
 
 -- Query to get all columns from DailyLog
 SELECT logID, date, scope, production, units, spend FROM DailyLog;
+
+-- Query to insert into IssueLog
+INSERT INTO IssueLog (dateLogged, email, description, status) VALUES (?,?,?,?);

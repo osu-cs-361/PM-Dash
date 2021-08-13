@@ -2,6 +2,6 @@
 node_modules/
 
 # Database Credientials File
-.dbcon.js
+services/dbcon.js
 
 

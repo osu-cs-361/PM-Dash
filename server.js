@@ -2,7 +2,7 @@
 // Set up Express for server-side
 const express = require('express');
 const app = express();
-app.set('port', 14956);
+app.set('port', 4956);
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));

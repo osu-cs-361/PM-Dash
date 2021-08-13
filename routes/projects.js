@@ -6,7 +6,7 @@ const mysql = require('../services/dbcon.js');    // dbcon.js hold credientials 
 // GET /
 router.get('/', (req, res, next) => {
     const context = {};
-    let sql = 'SELECT projectID, projectName, budget, startDate, endDate FROM Projects;'
+    let sql = 'SELECT projectID, projectName, budget, startDate, endDate, duration FROM Projects;'
     mysql.pool.query(sql, function (err, results, fields) {
         if (err) {
             next(err);
@@ -25,8 +25,8 @@ router.get('/new', (req, res, next) => {
 // POST /new
 router.post('/new', (req, res, next) => {
     const context = {}
-    let sql = 'INSERT INTO Projects (projectName, budget, startDate, endDate) VALUES (?,?,?,?);'
-    mysql.pool.query(sql, [req.body.projectName, req.body.budget, req.body.startDate, req.body.endDate], function (err, results, fields) {
+    let sql = 'INSERT INTO Projects (projectName, budget, startDate, endDate, duration) VALUES (?,?,?,?,?);'
+    mysql.pool.query(sql, [req.body.projectName, req.body.budget, req.body.startDate, req.body.endDate, req.body.duration], function (err, results, fields) {
         if (err) {
             next(err);
             return;
@@ -54,8 +54,8 @@ router.get('/edit/:id', (req, res, next) => {
 // POST /edit
 router.post('/edit', (req, res, next) => {
     const context = {}
-    let sql = 'INSERT INTO Projects (projectName, budget, startDate, endDate) VALUES (?,?,?,?);'
-    mysql.pool.query(sql, [req.body.projectName, req.body.budget, req.body.startDate, req.body.endDate], function (err, results, fields) {
+    let sql = 'UPDATE Projects SET projectName = ?, budget = ?, startDate = ?, endDate = ? WHERE projectID = ?; '
+    mysql.pool.query(sql, [req.body.projectName, req.body.budget, req.body.startDate, req.body.endDate, req.body.projectID], function (err, results, fields) {
         if (err) {
             next(err);
             return;

@@ -1,25 +1,23 @@
-// This function creates an eventListener for the submit button on the edit project form
-const editProject = document.querySelector("#editProjectForm");
-editProject.addEventListener('submit', async (e) => {
+// This function creates an eventListener for the submit button on the new issue form
+const issueForm = document.querySelector("#issueForm");
+issueForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     // get form values
-    let projectID = editProject.elements.projectID.value;
-    let projectName = editProject.elements.projectName.value;
-    let budget = editProject.elements.budget.value;
-    let startDate = editProject.elements.startDate.value;
-    let endDate = editProject.elements.endDate.value;
+    let email = issueForm.elements.email.value;
+    let description = issueForm.elements.description.value;
+    let dateLogged = new Date().toISOString().slice(0, 10);
+    let status = "New";
 
     // Set base url for use in fetch function
-    let url = "/projects/edit";
+    let url = "/help";
 
     // Prepare payload object to send as body of POST request
     let payload = {
-        projectID: projectID,
-        projectName: projectName,
-        budget: budget,
-        startDate: startDate,
-        endDate: endDate
+        email: email,
+        description: description,
+        dateLogged: dateLogged,
+        status: status
     };
 
     // Set config variable to be used as 2nd paramter in fetch (fetch init object)
@@ -47,4 +45,7 @@ editProject.addEventListener('submit', async (e) => {
     // Replace div element with new data from server
     oldDiv.parentNode.replaceChild(newDiv, oldDiv);
 
+    // clear inputs
+    issueForm.elements.email.value = "";
+    issueForm.elements.description.value = "";
 })

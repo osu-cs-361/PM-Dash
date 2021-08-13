@@ -45,3 +45,16 @@ h1 {
 #reportDiv {
   margin: 10px;
 }
+
+#calc {
+  border: 1px solid gray;
+  margin: 10px;
+  padding: 5px;
+}
+
+#delay {
+  font-size: 14px;
+  transition-property: font-size;
+  transition-duration: 4s;
+  transition-delay: 2s;
+}

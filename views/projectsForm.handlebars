@@ -11,6 +11,10 @@
             <input type="number" step="any" class="form-control" id="budget" required>
         </div>
         <div class="mb-3">
+            <label for="duration" class="form-label">Project Duration</label>
+            <input type="number" class="form-control" id="duration" required>
+        </div>
+        <div class="mb-3">
             <label for="startDate" class="form-label">Project Start Date</label>
             <input type="date" id="startDate" required>
         </div>
@@ -19,6 +23,24 @@
             <input type="date" id="endDate" required>
         </div>
         <button type="submit" class="btn btn-primary" id="newProjectBtn">Submit</button>
+    </form>
+</div>
+<div id="calc">
+    <h3>Duration Calculator</h3>
+    <p>Enter the start and end date below, then click "Calculate Duration" which will automatically calculate the
+        duration (in days). It will even pre-populate the form above for you!
+    </p>
+
+    <form id="durationForm">
+        <div class="mb-3">
+            <label for="startDateCalc" class="form-label">Project Start Date</label>
+            <input type="date" id="startDateCalc">
+        </div>
+        <div class="mb-3">
+            <label for="endDateCalc" class="form-label">Project End Date</label>
+            <input type="date" id="endDateCalc">
+        </div>
+        <button type="submit" class="btn btn-primary" id="durationCalcBtn">Calculate Duration</button>
     </form>
 </div>
 
