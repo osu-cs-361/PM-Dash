@@ -24,3 +24,9 @@ INSERT INTO IssueLog (dateLogged, email, description, status) VALUES (?,?,?,?);
 DELETE FROM :projectName + DailyLog WHERE logID = ?;
 
 INSERT INTO :projectName + DailyLog (date, plannedProgress, actualProgress, plannedSpend, actualSpend) VALUES (?,?,?,?,?);
+
+SELECT SUM(plannedProgress) AS total_planned_progress, 
+    SUM(actualProgress) AS total_actual_progress, 
+    SUM(plannedSpend) AS total_planned_spend, 
+    SUM(actualSpend) AS total_actual_spend, 
+    FROM MercuryDailyLog;
