@@ -15,22 +15,73 @@ INSERT INTO `Projects` VALUES
     (3, 'Apollo', 2000000000.00, '2028-01-01', '2029-12-31', 730),
     (4, 'Skylab', 5000000000.00, '2029-01-01', '2030-12-31', 729);
 
-DROP TABLE IF EXISTS `DailyLog`;
-CREATE TABLE `DailyLog`(
+DROP TABLE IF EXISTS `MercuryDailyLog`;
+CREATE TABLE `MercuryDailyLog`(
     `logID` int(11) NOT NULL AUTO_INCREMENT, 
     `date` date NOT NULL,
-    `scope` varchar(255) NOT NULL,
-    `production` decimal(10,2) NOT NULL,
-    `units` varchar(255) NOT NULL,
-    `spend` decimal(10,2) NOT NULL,
+    `plannedProgress` decimal(5,2) NOT NULL,
+    `actualProgress` decimal(5,2) NOT NULL,
+    `plannedSpend` decimal(20,2) NOT NULL,
+    `actualSpend` decimal(20,2) NOT NULL,
     PRIMARY KEY (`logID`)
 )ENGINE=InnoDB;
 
-INSERT INTO `DailyLog` VALUES
-    (1, '2021-07-01', 'Route A', 100.00, 'line km', 55000.00),
-    (2, '2021-07-02', 'Route A', 50.00, 'line km', 27500.00),
-    (3, '2021-07-03', 'Route A', 200.00, 'line km', 110000.00),
-    (4, '2021-07-04', 'Route A', 75.50, 'line km', 40500.50);
+INSERT INTO `MercuryDailyLog` VALUES
+    (1, '2021-07-01', 5.00, 3.00, 100.00, 70.00),
+    (2, '2021-07-02', 3.00, 5.00, 70.00, 100.00),
+    (3, '2021-07-03', 4.00, 4.00, 90.00, 100.00),
+    (4, '2021-07-04', 6.50, 7.50, 200.00, 300.00);
+
+DROP TABLE IF EXISTS `GeminiDailyLog`;
+CREATE TABLE `GeminiDailyLog`(
+    `logID` int(11) NOT NULL AUTO_INCREMENT, 
+    `date` date NOT NULL,
+    `plannedProgress` decimal(5,2) NOT NULL,
+    `actualProgress` decimal(5,2) NOT NULL,
+    `plannedSpend` decimal(20,2) NOT NULL,
+    `actualSpend` decimal(20,2) NOT NULL,
+    PRIMARY KEY (`logID`)
+)ENGINE=InnoDB;
+
+INSERT INTO `GeminiDailyLog` VALUES
+    (1, '2021-07-01', 5.00, 3.00, 100.00, 70.00),
+    (2, '2021-07-02', 3.00, 5.00, 70.00, 100.00),
+    (3, '2021-07-03', 4.00, 4.00, 90.00, 100.00),
+    (4, '2021-07-04', 6.50, 7.50, 200.00, 300.00);
+
+DROP TABLE IF EXISTS `ApolloDailyLog`;
+CREATE TABLE `ApolloDailyLog`(
+    `logID` int(11) NOT NULL AUTO_INCREMENT, 
+    `date` date NOT NULL,
+    `plannedProgress` decimal(5,2) NOT NULL,
+    `actualProgress` decimal(5,2) NOT NULL,
+    `plannedSpend` decimal(20,2) NOT NULL,
+    `actualSpend` decimal(20,2) NOT NULL,
+    PRIMARY KEY (`logID`)
+)ENGINE=InnoDB;
+
+INSERT INTO `ApolloDailyLog` VALUES
+    (1, '2021-07-01', 5.00, 3.00, 100.00, 70.00),
+    (2, '2021-07-02', 3.00, 5.00, 70.00, 100.00),
+    (3, '2021-07-03', 4.00, 4.00, 90.00, 100.00),
+    (4, '2021-07-04', 6.50, 7.50, 200.00, 300.00);
+
+DROP TABLE IF EXISTS `SkylabDailyLog`;
+CREATE TABLE `SkylabDailyLog`(
+    `logID` int(11) NOT NULL AUTO_INCREMENT, 
+    `date` date NOT NULL,
+    `plannedProgress` decimal(5,2) NOT NULL,
+    `actualProgress` decimal(5,2) NOT NULL,
+    `plannedSpend` decimal(20,2) NOT NULL,
+    `actualSpend` decimal(20,2) NOT NULL,
+    PRIMARY KEY (`logID`)
+)ENGINE=InnoDB;
+
+INSERT INTO `SkylabDailyLog` VALUES
+    (1, '2021-07-01', 5.00, 3.00, 100.00, 70.00),
+    (2, '2021-07-02', 3.00, 5.00, 70.00, 100.00),
+    (3, '2021-07-03', 4.00, 4.00, 90.00, 100.00),
+    (4, '2021-07-04', 6.50, 7.50, 200.00, 300.00);
 
 DROP TABLE IF EXISTS `IssueLog`;
 CREATE TABLE `IssueLog`(

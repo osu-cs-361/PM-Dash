@@ -1,0 +1,74 @@
+<div class='title'>
+    <h3>{{projectName}} Daily Data Log</h3>
+</div>
+<div class="row align-items-center dataTables">
+    <div class="col">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">logID</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Planned Progress (%)</th>
+                    <th scope="col">Actual Progress (%)</th>
+                    <th scope="col">Planned Spend (USD)</th>
+                    <th scope="col">Actual Spend (USD)</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each results}}
+                <tr>
+                    <th scope="row">{{this.logID}}</th>
+                    <td>{{this.date}}</td>
+                    <td>{{this.plannedProgress}}</td>
+                    <td>{{this.actualProgress}}</td>
+                    <td>{{this.plannedSpend}}</td>
+                    <td>{{this.actualSpend}}</td>
+                    <td>
+                        <button type="submit" class="btn btn-danger deleteBtn" value="{{this.logID}}">Delete</button>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div id="updateDiv"></div>
+
+<div class='formDiv half-width'>
+    <form id="newDataLogForm">
+        <div>
+            <h3>Submit a new daily log entry:</h3>
+        </div>
+        <div class="mb-3">
+            <label for="dataDate" class="form-label">Date</label>
+            <input type="date" id="dataDate" required>
+        </div>
+        <div class="mb-3">
+            <label for="plannedProgress" class="form-label">Planned Progress (%)</label>
+            <input type="number" step="any" class="form-control" id="plannedProgress" required>
+        </div>
+        <div class="mb-3">
+            <label for="actualProgress" class="form-label">Actual Progress (%)</label>
+            <input type="number" step="any" class="form-control" id="actualProgress" required>
+        </div>
+        <div class="mb-3">
+            <label for="plannedSpend" class="form-label">Planned Spend (USD)</label>
+            <input type="number" step="any" class="form-control" id="plannedSpend" required>
+        </div>
+        <div class="mb-3">
+            <label for="actualSpend" class="form-label">Actual Spend (USD)</label>
+            <input type="number" step="any" class="form-control" id="actualSpend" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<div class="container" id="btnDiv">
+    <div class="center">
+        <a class="btn btn-primary" href="/projects" role="button">Go back to Projects</a>
+    </div>
+</div>
+
+<script src="/editDailyLog.js"></script>

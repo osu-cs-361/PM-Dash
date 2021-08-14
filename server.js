@@ -25,6 +25,10 @@ app.use('/dashboard', dashboardRoutes);
 const helpRoutes = require('./routes/help');
 app.use('/help', helpRoutes);
 
+const dataLogRoutes = require('./routes/dataLog');
+app.use('/datalog', dataLogRoutes);
+
+
 
 //-----------------------------------------------------------------------------
 // ERROR handlers

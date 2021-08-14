@@ -9,9 +9,16 @@
                     <h5 class="card-title">{{this.projectName}}</h5>
                     <p class="card-text">Budget (USD): {{this.budget}}</p>
                     <p class="card-text">Duration (days): {{this.duration}}</p>
-                    <a href="/projects/edit/{{this.projectID}}" class="card-link">Edit</a>
-                    <div>
-                        <a href="/dashboard/{{this.projectName}}" class="btn btn-primary">Go to project dashboard</a>
+                    <div class="btnMargin">
+                        <a href="/projects/edit/{{this.projectID}}" class="btn btn-warning">Edit</a>
+                    </div>
+                    <div class="btnMargin">
+                        <a href="/dashboard/{{this.projectName}}" class="btn btn-primary">Go to {{this.projectName}}
+                            dashboard</a>
+                    </div>
+                    <div class="btnMargin">
+                        <a href="/datalog/{{this.projectName}}" class="btn btn-success">Go to {{this.projectName}} Daily
+                            Data Log</a>
                     </div>
                 </div>
             </div>

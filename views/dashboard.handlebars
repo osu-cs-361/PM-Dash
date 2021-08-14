@@ -32,7 +32,7 @@
         </div>
     </div>
     <div class='title'>
-        <h3>Daily Data Log</h3>
+        <h3>{{projectName}} Daily Data Log</h3>
     </div>
     <div class="row align-items-center dataTables">
         <div class="col">
@@ -41,10 +41,10 @@
                     <tr>
                         <th scope="col">logID</th>
                         <th scope="col">Date</th>
-                        <th scope="col">Scope</th>
-                        <th scope="col">Production</th>
-                        <th scope="col">Units</th>
-                        <th scope="col">Spend (USD)</th>
+                        <th scope="col">Planned Progress (%)</th>
+                        <th scope="col">Actual Progress (%)</th>
+                        <th scope="col">Planned Spend (USD)</th>
+                        <th scope="col">Actual Spend (USD)</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -52,10 +52,10 @@
                     <tr>
                         <th scope="row">{{this.logID}}</th>
                         <td>{{this.date}}</td>
-                        <td>{{this.scope}}</td>
-                        <td>{{this.production}}</td>
-                        <td>{{this.units}}</td>
-                        <td>{{this.spend}}</td>
+                        <td>{{this.plannedProgress}}</td>
+                        <td>{{this.actualProgress}}</td>
+                        <td>{{this.plannedSpend}}</td>
+                        <td>{{this.actualSpend}}</td>
                     </tr>
                     {{/each}}
                 </tbody>

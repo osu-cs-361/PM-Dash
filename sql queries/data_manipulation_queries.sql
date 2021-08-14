@@ -19,3 +19,8 @@ SELECT logID, date, scope, production, units, spend FROM DailyLog;
 
 -- Query to insert into IssueLog
 INSERT INTO IssueLog (dateLogged, email, description, status) VALUES (?,?,?,?);
+
+-- Query to delete a daily log entry
+DELETE FROM :projectName + DailyLog WHERE logID = ?;
+
+INSERT INTO :projectName + DailyLog (date, plannedProgress, actualProgress, plannedSpend, actualSpend) VALUES (?,?,?,?,?);
