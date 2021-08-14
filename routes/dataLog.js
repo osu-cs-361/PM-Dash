@@ -3,7 +3,8 @@ const router = express.Router();
 const mysql = require('../services/dbcon.js');
 
 const getDailyDataLog = (res, context, complete) => {
-    let sqlCommand = 'SELECT logID, date, plannedProgress, actualProgress, plannedSpend, actualSpend FROM ' + context.projectName + 'DailyLog;';
+    let sqlCommand = 'SELECT logID, date, plannedProgress, actualProgress, plannedSpend, actualSpend FROM ' +
+        context.projectName + 'DailyLog;';
     mysql.pool.query(sqlCommand, (err, results) => {
         if (err) {
             next(err);
